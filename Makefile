@@ -41,12 +41,12 @@ HTMLS =                 \
 
 EXTRA_HTML_DEPENDENCIES = HEADER.md FOOTER.md *.meta
 
-all : $(HTMLS)
+all: $(HTMLS)
 
-install-remote :
+install-remote:
 	RSYNC_PREFIX=transientscu-services: make install-with-prefix
 
-install-local :
+install-local:
 	RSYNC_PREFIX="" make install-with-prefix
 
 install-with-prefix: all
