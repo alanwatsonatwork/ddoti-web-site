@@ -23,32 +23,38 @@
 
 ########################################################################
 
-.SUFFIXES:  .md .html
-.md.html			:
-	./make-html "$*".md >"$*".html
+HTMLS =                 \
+  index.html            \
+  acknowledgements.html \
+  contact.html          \
+  search.html           \
+  news-2022.html        \
+  news-2021.html        \
+  news-2020.html        \
+  news-2019.html        \
+  news-2018.html        \
+  news-2017.html        \
+  publications.html     \
+  status.html           \
+  participants.html     \
+  gallery.html
 
-########################################################################
+EXTRA_HTML_DEPENDENCIES = HEADER.md FOOTER.md *.meta
 
-all			:	index.html \
-				acknowledgements.html \
-				contact.html \
-				search.html \
-				news-2022.html \
-				news-2021.html \
-				news-2020.html \
-				news-2019.html \
-				news-2018.html \
-				news-2017.html \
-				publications.html \
-				status.html \
-				participants.html \
-				gallery.html
+all : $(HTMLS)
 
-install			:	all
+install-remote :
+	RSYNC_PREFIX=transientscu-services: make install-with-prefix
+
+install-local :
+	RSYNC_PREFIX="" make install-with-prefix
+
+install-with-prefix: all
 	rsync -v --chmod=u=rwX,go=rX \
-	  ddoti.conf transientscu-services:/etc/apache2/sites-enabled/
+	  ddoti.conf $$RSYNC_PREFIX/etc/apache2/sites-enabled/
 	rsync -ahv --chmod=u=rwX,go=rX --delete \
 	  --exclude=.git/ \
+	  --include=./ \
 	  --include=*/ \
 	  --include=*.html \
 	  --include=*.pdf \
@@ -57,20 +63,10 @@ install			:	all
 	  --include=*.css \
 	  --include=*.mp4 \
 	  --exclude=* \
-	  --exclude=.git* \
-	  . transientscu-services:/usr/local/var/www/ddoti/html
-
-clean			:
-	-rm -f *.html
-
-distclean		:	clean
+	  . $$RSYNC_PREFIX/usr/local/var/www/ddoti/html
 
 ########################################################################
 
-index.html		:	make-html HEADER.md FOOTER.md index.md
-search.html		:	make-html HEADER.md FOOTER.md search.md
-contact.html		:	make-html HEADER.md FOOTER.md contact.md
-news.html		:	make-html HEADER.md FOOTER.md news.md
-status.html		:	make-html HEADER.md FOOTER.md status.md
-publications.html	:	make-html HEADER.md FOOTER.md publications.md
-gallery.html		:	make-html HEADER.md FOOTER.md gallery.md
+TOOLSDIR	=	./tools
+include $(TOOLSDIR)/Makefile.tools
+include ./Makefile.dependencies
