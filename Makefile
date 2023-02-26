@@ -50,6 +50,7 @@ install-local:
 	RSYNC_PREFIX="" make install-with-prefix
 
 install-with-prefix: all
+	ssh cu-public mkdir -p /usr/local/var/www/ddoti/
 	rsync -v --chmod=u=rwX,go=rX \
 	  ddoti.conf $$RSYNC_PREFIX/usr/local/var/www/ddoti/
 	rsync -ahv --chmod=u=rwX,go=rX --delete \
