@@ -41,18 +41,13 @@ HTMLS =                 \
 
 EXTRA_HTML_DEPENDENCIES = HEADER.md FOOTER.md *.meta
 
+REMOTE_HOST=acceso
+REMOTE_DIR=ddoti/html/
+	
 all: $(HTMLS)
 
-install-remote:
-	RSYNC_PREFIX=cu-public: make install-with-prefix
-
-install-local:
-	RSYNC_PREFIX="" make install-with-prefix
-
-install-with-prefix: all
-	ssh cu-public mkdir -p /usr/local/var/www/ddoti/
-	rsync -v --chmod=u=rwX,go=rX \
-	  ddoti.conf $$RSYNC_PREFIX/usr/local/var/www/ddoti/
+install: all
+	ssh $(REMOTE_HOST) "mkdir -p $(REMOTE_DIR)"
 	rsync -ahv --chmod=u=rwX,go=rX --delete \
 	  --exclude=.git/ \
 	  --include=./ \
@@ -64,7 +59,7 @@ install-with-prefix: all
 	  --include=*.css \
 	  --include=*.mp4 \
 	  --exclude=* \
-	  . $$RSYNC_PREFIX/usr/local/var/www/ddoti/html
+	  . $(REMOTE_HOST):$(REMOTE_DIR)
 
 ########################################################################
 
