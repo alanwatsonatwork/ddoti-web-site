@@ -1,6 +1,9 @@
 # DDOTI: Publications
 
-* Refereed Science Papers
+* Refereed science papers by the DDOTI transients science team:
+  * Becerra et al. 2023, 
+    "The Optical Two- and Three-dimensional Fundamental Plane Correlations for Nearly 180 Gamma-Ray Burst Afterglows with Swift/UVOT, RATIR, and the Subaru Telescope"
+
   * Pereyra et al. 2022, MNRAS, 511, 6205:
     "GRB 191016A: The onset of the forward shock and evidence of late energy injection"</br>
     [ADS](https://ui.adsabs.harvard.edu/abs/2022MNRAS.tmp..407P/abstract)

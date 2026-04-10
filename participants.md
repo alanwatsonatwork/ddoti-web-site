@@ -5,37 +5,29 @@ The DDOTI project is lead by:
 * Alan Watson (UNAM) -- Co-PI, Technical Lead, and Project Manager
 * William Lee (UNAM) -- Co-PI
 * Nat Butler (ASU) -- Analysis Lead
-* Margarita Pereyra (UNAM) -- Project Scientist
+* Rosa Becerra (UNAM) -- Operations Lead
 
 The relativistic stellar transients science team are:
 
 * Rosa Becerra-Godínez (UNAM)
 * Nat Butler (ASU)
-* Simone Dichiara (PSU)
-* Alexander Kutyrev (NASA/GSFC/UMD)
 * William Lee (UNAM)
 * Océlotl López (UNAM)
 * Margarita Pereyra (UNAM)
-* Srihari Ravi (ASU)
-* Nora Troja (NASA/GSFC/UMD)
 * Alan Watson (UNAM)
 
-Additional science is being carried out by:
+Previous members of the science team include:
 
-* Nat Butler (ASU) -- AGNs
-* Yilen Gómez Macau-Chew (UNAM) -- hot jupiters
-* Joel Castro (UNAM), Daniel Parrott, Mauricio Reyes (UNAM), Sergio Silva (UNAM) -- NEOs
-* Carlos Román-Zúñiga (UNAM) and Jesús Hernández (UNAM) -- YSOs
+* Simone Dichiara (PSU)
+* Alexander Kutyrev (NASA/GSFC/UMD)
+* Srihari Ravi (ASU)
+* Nora Troja (NASA/GSFC/UMD and University of Rome)
 
 The technical team are:
 
 * Fernando Ángeles (UNAM) -- electronic engineering
-* Rosa Becerra (UNAM) -- operations
-* Nat Butler (ASU) -- data pipeline
 * Alejandro Farah (UNAM) -- mechanical engineering
 * Liliana Figueroa (UNAM) -- civil engineering
-* Diego González -- operations
-* Margarita Pereyra -- project scientist and operations
 * Fernando Quirós (UNAM) -- electronic engineering
 * Jaime Ruíz-Díaz-Soto (UNAM) -- mechanical fabrication
 * Benito Serralde (UNAM) -- mechanical fabrication
